@@ -54,6 +54,13 @@ fetch("https://raw.githubusercontent.com/dr5hn/countries-states-cities-database/
     }
 });
 
+// get date of the day 
+let dateOfDay = function (){
+    let date = new Date();
+    return `${date.getDate()}-${date.getMonth()+1}-${date.getFullYear()}`;
+};
+
+console.log(dateOfDay());
 let fajrS = document.querySelector(".prayer .salah .box .fajr"),
     dhuhrS = document.querySelector(".prayer .salah .box .Dhuhr"),
     asrS = document.querySelector(".prayer .salah .box .Asr"),
@@ -65,15 +72,15 @@ submitButton.onclick = function () {
     let s = stateIn.options[stateIn.selectedIndex].text;
 
 
-    fetch(`https://api.aladhan.com/v1/timingsByCity?city=${s}&country=${c}&method=8`).
+    fetch(`http://api.aladhan.com/v1/timingsByCity/${dateOfDay()}?city=${s}&country=${c}&method=5`).
     then((response)=>{return response.json()}).
     then((response)=>{
-        let dayAr  = response.data.date.hijri.weekday.ar,
-            dayNum = response.data.date.hijri.day,
-            monthAr= response.data.date.hijri.month.ar,
-            yearAr = response.data.date.hijri.year,
-            year   = response.data.date.gregorian.date
-            dateP.innerHTML =`${dayAr} ${dayNum} ${monthAr} ${yearAr}  هجريه - الموافق ${year} م.`;
+        // let dayAr  = response.data.date.hijri.weekday.ar,
+        //     dayNum = response.data.date.hijri.day,
+        //     monthAr= response.data.date.hijri.month.ar,
+        //     yearAr = response.data.date.hijri.year,
+        //     year   = response.data.date.gregorian.date
+        //     dateP.innerHTML =`${dayAr} ${dayNum} ${monthAr} ${yearAr}  هجريه - الموافق ${year} م.`;
         return response;
     }).then((response)=>{
         let fajr = response.data.timings.Fajr,
@@ -162,13 +169,16 @@ close.addEventListener('click',function popClose() {
 
 let seemore = document.querySelector(".quran .container  .content");
 let more = document.querySelector(".quran .container .more");
+// let lessss = document.querySelector(".quran .container .less");
 
 
 more.onclick =function (){
     seemore.style.cssText ="height:auto;";
-    more.classList.add("less");
+    more.classList.toggle("less");
     more.textContent ="اقل";
 };
+
+ 
 
 
 // start sound 

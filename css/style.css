@@ -23,7 +23,7 @@ html{
     --main-color4 : #44b5e5;
     --secondry-color1:#e1f3fd;
     --gold:#ffb741;
-    --main-padding : 100px;
+    --main-padding : 150px;
 
 }
 
@@ -326,6 +326,7 @@ header .container .main-logo{
     padding-bottom: var(--main-padding);
     /* background-color: #EFEEEE; */    
     min-height: 100vh;
+
 }
 .prayer .container .date {
     font-size: 20px;
@@ -449,6 +450,7 @@ header .container .main-logo{
     padding-top: var(--main-padding);
     padding-bottom: var(--main-padding);
 }
+.prayer .ayah,
 .quran .ayah{
     padding: 40px 0;
     text-align: center;
@@ -506,7 +508,7 @@ header .container .main-logo{
     left: -15px;
     width: 30px;
     height: 30px;
-    background-color: #FFF;
+    background-color: var(--gold);
     border: 2px solid var(--main-color3);
     border-radius: 50%;
     display: flex;
