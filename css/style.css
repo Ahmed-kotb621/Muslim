@@ -23,7 +23,7 @@ html{
     --main-color4 : #44b5e5;
     --secondry-color1:#e1f3fd;
     --gold:#ffb741;
-    --main-padding : 150px;
+    --main-padding : 100px;
 
 }
 
@@ -146,7 +146,6 @@ header .head-ul li a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* position: relative; */
 }
 
 .s-logo .head {
@@ -210,35 +209,17 @@ header .container .main-logo{
 
 /* start landing */
 .landing {
-    height:100vh;
-    
+    height: calc(100vh);
 }
 .landing .container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 80%;
+    height: 85%;
 }
 
 .landing .container .text {
     flex-basis: 50%;
-}
-
-.landing .praying {
-    padding: 15px 30px;
-    font-size: 20px;
-    font-weight: bold;
-    background-color: transparent;
-    color: var(--main-color);
-    border: 1px solid var(--gold);
-    width: fit-content;
-    margin: 0 auto;
-    border-radius: 10px;
-    display: block;
-    transition: 0.3s;
-}
-.landing .praying:hover {
-    background-color: var(--gold);
 }
 
 .landing .container .image {
@@ -291,6 +272,22 @@ header .container .main-logo{
     line-height: 2;
     font-family: 'Reem Kufi', serif
 }
+
+.landing .PrayerTimesAnc {
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 15px 30px;
+    border-radius: 15px;
+    color: var(--main-color);
+    font-size: 20px;
+    border: 1px solid var(--gold);
+}
+
+.landing .PrayerTimesAnc:hover {
+    background-color: var(--gold);
+    transition: 0.3s;
+}
 @media (max-width:767px) {
     .landing {
         padding-top: 130px;
@@ -322,11 +319,10 @@ header .container .main-logo{
  /* start prayers */
 
 .prayer {
-    padding-top: var(--main-padding);
+    padding-top: calc(100px + var(--main-padding));
     padding-bottom: var(--main-padding);
     /* background-color: #EFEEEE; */    
     min-height: 100vh;
-
 }
 .prayer .container .date {
     font-size: 20px;
@@ -447,10 +443,9 @@ header .container .main-logo{
 /* end prayers */
 /* start quran */
 .quran {
-    padding-top: var(--main-padding);
+    padding-top: calc(100px + var(--main-padding));
     padding-bottom: var(--main-padding);
 }
-.prayer .ayah,
 .quran .ayah{
     padding: 40px 0;
     text-align: center;
@@ -508,7 +503,7 @@ header .container .main-logo{
     left: -15px;
     width: 30px;
     height: 30px;
-    background-color: var(--gold);
+    background-color: #FFF;
     border: 2px solid var(--main-color3);
     border-radius: 50%;
     display: flex;
@@ -671,7 +666,7 @@ header .container .main-logo{
 
 /* start azkar */
 .azkar {
-    padding-top: var(--main-padding);
+    padding-top: calc(100px + var(--main-padding));
     padding-bottom: var(--main-padding);
 }
 
@@ -754,7 +749,7 @@ header .container .main-logo{
 /* end azkar */
 /* start doaa */
 .doaa {
-    padding-top: var(--main-padding);
+    padding-top: calc(100px + var(--main-padding));
     padding-bottom: var(--main-padding);
 }
 
@@ -802,8 +797,9 @@ header .container .main-logo{
 /* end doaa */
 /* start contact */
 .contact {
-    padding-top: var(--main-padding);
+    padding-top: calc(100px + var(--main-padding));
     padding-bottom: var(--main-padding);
+    height: 100vh;
 }
 
 .contact .container {
@@ -935,6 +931,4 @@ footer span {
     counter-increment: vvv;
 } */
 
-.sound .audio-cont {
-
-}
+ 

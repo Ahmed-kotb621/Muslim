@@ -33,7 +33,10 @@ fetch(`https://api.aladhan.com/v1/timingsByCity?city=Cairo&country=Egypt&method=
 });
 
 
-fetch("https://raw.githubusercontent.com/dr5hn/countries-states-cities-database/master/countries%2Bstates.json")
+
+// get countries and cities 
+function getCountryAndCity(){
+    fetch("https://raw.githubusercontent.com/dr5hn/countries-states-cities-database/master/countries%2Bstates.json")
 .then((result)=>{
     return result.json();
 }).then((data)=>{
@@ -53,6 +56,9 @@ fetch("https://raw.githubusercontent.com/dr5hn/countries-states-cities-database/
         }
     }
 });
+};
+
+getCountryAndCity();
 
 // get date of the day 
 let dateOfDay = function (){
@@ -60,14 +66,15 @@ let dateOfDay = function (){
     return `${date.getDate()}-${date.getMonth()+1}-${date.getFullYear()}`;
 };
 
-console.log(dateOfDay());
-let fajrS = document.querySelector(".prayer .salah .box .fajr"),
+function getPrayingTimes(){
+        
+    let fajrS = document.querySelector(".prayer .salah .box .fajr"),
     dhuhrS = document.querySelector(".prayer .salah .box .Dhuhr"),
     asrS = document.querySelector(".prayer .salah .box .Asr"),
     maghribS = document.querySelector(".prayer .salah .box .Maghrib"),
     ishaS = document.querySelector(".prayer .salah .box .Isha");
 
-submitButton.onclick = function () {
+    submitButton.onclick = function () {
     let c = countryIn.options[countryIn.selectedIndex].text;
     let s = stateIn.options[stateIn.selectedIndex].text;
 
@@ -96,8 +103,11 @@ submitButton.onclick = function () {
         ishaS.innerHTML = `PM${isha}`;
         
     });
+    };
+
 };
 
+getPrayingTimes();
 
 let content = document.querySelector(".quran .content");
 let test =document.querySelector(".quran .test");
@@ -169,16 +179,13 @@ close.addEventListener('click',function popClose() {
 
 let seemore = document.querySelector(".quran .container  .content");
 let more = document.querySelector(".quran .container .more");
-// let lessss = document.querySelector(".quran .container .less");
 
 
 more.onclick =function (){
     seemore.style.cssText ="height:auto;";
-    more.classList.toggle("less");
+    more.classList.add("less");
     more.textContent ="اقل";
 };
-
- 
 
 
 // start sound 

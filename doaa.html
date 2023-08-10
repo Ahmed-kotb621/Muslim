@@ -26,42 +26,23 @@
             <a href="index.html"><h1 class="head">مُسْـــــلِم</h1></a>
             <i href="index.html" class="fa-solid fa-mosque icon"></i>
         </div>
-
         <ul class="head-ul">
-            <li><a href="praying.html">مواقيت الصلاه</a></li>
+            <li><a href="prayingTimes.html">مواقيت الصلاه</a></li>
             <li><a href="quran.html">القرآن الكريم قراءة</a></li>
-            <li><a href="quransound.html">القرآن الكريم استماع</a></li>
+            <li><a href="quranSound.html">القرآن الكريم استماع</a></li>
             <li><a href="azkar.html">الاذكار</a></li>
             <li><a href="doaa.html">الدعاء</a></li>
             <li><a href="contactus.html">تواصل معنا </a></li>
         </ul>
         </div>
     </header>
-    <!-- start landing -->
-    <div class="landing">
-        <div class="container">
-            <div class="text">
-                <h5></h5>
-                <h3>كل ما يهم المسلم في حياته اليوميه.</h3>
-                <p>"ٱلَّذِينَ ءَامَنُواْ وَتَطْمَئِنُّ قُلُوبُهُم بِذِكْرِ ٱللَّهِ ۗ أَلَا بِذِكْرِ ٱللَّهِ تَطْمَئِنُّ
-                ٱلْقُلُوبُ" [الرعد - 28]</p>
-
-            </div>
-            <div class="image">
-                <img src="images/5138493.jpg" alt="">
-            </div>
-            
-        </div>
-        <a href="#PrayerTimes" class="praying">مواقيت الصلاه</a>
-    </div>
-    <!-- end landing -->
+    
     <!-- start prayer times -->
-    <div class="prayer" id="PrayerTimes">
+    <div class="prayer" id="PrayerTimes" style="display: none;">
         <div class="main-title">
             <h2>مواقيت الصلاه</h2>
             <img src="images/prayer-mat (1).png" alt="">
         </div>
-        <div class="ayah">"إِنَّ الصَّلاةَ كَانَتْ عَلَى الْمُؤْمِنِينَ كِتَاباً مَوْقُوتاً"</div>
         <div class="container">
             <div class="times">
                 <div class="date">
@@ -127,7 +108,7 @@
     </div>
     <!-- end prayer times -->
     <!-- start quran -->
-    <div class="quran" id="quranText">
+    <div class="quran" id="quranText" style="display: none;">
         <div class="main-title">
             <h2>القرآن الكريم قراءة</h2>
             <img src="images/quran.png" alt="">
@@ -153,7 +134,43 @@
         </div>
     </div>
     <!-- end quran -->
- 
+    <!-- start sound-->
+    <div class="sound" id="quranSound" style="display: none;">
+        <div class="main-title">
+            <h2>القرآن الكريم استماع</h2>
+            <img src="images/music.png" alt="">
+        </div>
+        <div class="container">
+            <div class="audio-cont">
+                <button class="close" onclick="popClose()"><i class="fa-solid fa-xmark"></i></button>
+                <audio src="" class="audio" controls autoplay></audio>
+            </div>
+            <div class="content">
+            
+            </div>
+        </div>
+    </div>
+    <!-- end sound -->
+    <!-- start azkar -->
+    <div class="azkar" id="azkar" style="display: none;">
+        <div class="main-title">
+            <h2>الاذكار</h2>
+            <img src="images/tasbih.png" alt="">
+        </div>
+        <div class="container">
+            <div class="popup">
+                    <div class="head">
+                        <button class="close" onclick="popClose()"><i class="fa-regular fa-circle-xmark"></i></button>
+                        <h2>الاذكار</h2>
+                    </div>
+                    <div class="zekr">
+                    </div>
+            </div>
+            <div class="content">
+            </div>
+        </div>
+    </div>
+    <!-- end azkar -->
     <!-- start doaaa -->
     <div class="doaa" id="doaaa">
         <div class="main-title">
