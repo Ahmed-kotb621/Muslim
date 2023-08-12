@@ -82,12 +82,7 @@ function getPrayingTimes(){
     fetch(`http://api.aladhan.com/v1/timingsByCity/${dateOfDay()}?city=${s}&country=${c}&method=5`).
     then((response)=>{return response.json()}).
     then((response)=>{
-        // let dayAr  = response.data.date.hijri.weekday.ar,
-        //     dayNum = response.data.date.hijri.day,
-        //     monthAr= response.data.date.hijri.month.ar,
-        //     yearAr = response.data.date.hijri.year,
-        //     year   = response.data.date.gregorian.date
-        //     dateP.innerHTML =`${dayAr} ${dayNum} ${monthAr} ${yearAr}  هجريه - الموافق ${year} م.`;
+      
         return response;
     }).then((response)=>{
         let fajr = response.data.timings.Fajr,
@@ -117,6 +112,7 @@ let popName = document.querySelector(".quran .popup h2");
 let popContent = document.querySelector(".quran .popup p");
 let nextButton = document.querySelector(".quran .popup .next");
 let prevButton = document.querySelector(".quran .popup .prev");
+
 
 
 fetch("https://quran-endpoint.vercel.app/quran")
@@ -177,16 +173,7 @@ close.addEventListener('click',function popClose() {
                 pop.style.display ="none";
 });
 
-let seemore = document.querySelector(".quran .container  .content");
-let more = document.querySelector(".quran .container .more");
-
-
-more.onclick =function (){
-    seemore.style.cssText ="height:auto;";
-    more.classList.add("less");
-    more.textContent ="اقل";
-};
-
+ 
 
 // start sound 
 
@@ -232,23 +219,11 @@ fetch("https://quran-endpoint.vercel.app/quran")
                 audioS.src = `https://download.quranicaudio.com/quran/muhammad_siddeeq_al-minshaawee/${addLeadingZeros(number,3)}.mp3`;
                 audioCont.style.display ="block";
             });
-            // popName.textContent = element.asma.ar.long;
-            ////////////////////////////////////////////////////
+      
         });
     });
     
 });
-
-
-
-// let seeless = document.querySelector(".quran .container .less");
-// seeless.onclick =function () {
-//     seemore.style.cssText ="height:500px;overflow:hidden";
-//     more.classList.remove("less");
-//     more.classList.add("more");
-//     more.textContent ="المزيد";
-// };
-
 
 let azkarName = document.querySelector(".azkar .content");
 let azkarNameP = document.querySelector(".azkar .content p");
@@ -291,7 +266,7 @@ fetch("json/azkar.json").then((response)=>{
                 cont.appendChild(desc);
                 zekrcont.appendChild(cont);
                 cont.style.cssText = "   display: flex;align-items: center;justify-content: center;flex-direction:column;border: 2px solid var(--main-color);border-radius: 10px;margin-bottom:15px;padding:10px;width:100%";
-                // console.log(el);
+
             });
 
         }
@@ -309,55 +284,35 @@ closeAzkar.onclick = function () {
 let nextBut = document.querySelector(".doaa .content .next-doaa"),
     prevBut = document.querySelector(".doaa .content .prev-doaa"),
     categoryP = document.querySelector(".doaa .content .category"),
-    doaa = document.querySelector(".doaa .content .zekr");
+    doaa = document.querySelector(".doaa .content .zekr"),
+    mainDoaa = document.querySelector(".doaa .content .mainDoaa");
 
 
 fetch("json/doaa.json").then((response)=>{
     return response.json();
-}).then((data)=>{
-        let index = 0;
-        nextBut.onclick = function () {
-            categoryP.textContent = data[index].category;
-            index++;
-            doaa.textContent = data[index].zekr;
-        };
-        prevBut.onclick = function () {
-            index--;
-            categoryP.textContent = data[index].category;
-            doaa.textContent = data[index].zekr;
+}).then((data)=>{        
+        data.forEach((el)=>{
+            let doaaCategory = document.createTextNode(el.category);
+            let doaaZekr = document.createTextNode(el.zekr);
+
+            let doaa_container = document.createElement("div");
+
+            let ctg = categoryP.appendChild(doaaCategory);
+            let zek = doaa.appendChild(doaaZekr);
             
-            
-        };
+
+            doaa_container.appendChild(ctg);
+            doaa_container.appendChild(zek);
+                
+            mainDoaa.appendChild(doaa_container);
+            doaa_container.style.cssText = "border:1px solid var(--main-color); width:100%;margin:10px;padding:5px;border-radius:5px";
+            categoryP.style.css ="font-weight: bold; font-size: 20px; margin-bottom: 20px; color: var(--main-color);"
+         
+
+        })
+        
+
 });
 
-// let soundContent = document.querySelector(".sound .content");
-
-
-
-// fetch(`https://quran-endpoint.vercel.app/quran/?imamId=15`)
-// .then((response)=> {
-//     return response.json();
-// }).then((data)=>{
-//     let soundName = data.data;
-//     soundName.forEach((element)=>{
-//         let p = document.createElement("p");
-//         p.textContent(element.asma.ar.short);
-//         soundContent.appendChild(p);
-//         console.log(element.asma.ar.short);
-//     });
-// });
-
-// /////////////////////////////////////// get prayer times
-// // get surah name 
-// // fetch("http://api.alquran.cloud/v1/surah")
-// // .then((response)=>console.log(response.json()));
-
-
-// // get name and audio 
-fetch("https://quran-endpoint.vercel.app/quran")
-.then((response)=>{return response.json()}).then((data)=>{
-    console.log(data)
-});
-
-// let text =document.querySelector(".quran .text");
-// let audio =document.querySelector(".quran audio");
+ 
+ 
