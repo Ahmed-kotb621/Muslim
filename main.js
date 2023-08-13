@@ -280,10 +280,11 @@ closeAzkar.onclick = function () {
     zekrcont.innerHTML =" ";
 
 };
+ 
 
 let nextBut = document.querySelector(".doaa .content .next-doaa"),
     prevBut = document.querySelector(".doaa .content .prev-doaa"),
-    categoryP = document.querySelector(".doaa .content .category"),
+    categoryP = document.querySelector(".doaa .content .mainDoaa .category"),
     doaa = document.querySelector(".doaa .content .zekr"),
     mainDoaa = document.querySelector(".doaa .content .mainDoaa");
 
@@ -314,5 +315,5 @@ fetch("json/doaa.json").then((response)=>{
 
 });
 
- 
+categoryP.style.cssText ="font-weight:bold;color:red";
  
