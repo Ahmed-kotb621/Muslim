@@ -79,7 +79,7 @@ function getPrayingTimes(){
     let s = stateIn.options[stateIn.selectedIndex].text;
 
 
-    fetch(`http://api.aladhan.com/v1/timingsByCity/${dateOfDay()}?city=${s}&country=${c}&method=5`).
+    fetch(`https://api.aladhan.com/v1/timingsByCity/${dateOfDay()}?city=${s}&country=${c}&method=5`).
     then((response)=>{return response.json()}).
     then((response)=>{
       
