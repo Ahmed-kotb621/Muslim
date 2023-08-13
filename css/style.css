@@ -190,6 +190,9 @@ header .container .main-logo{
         margin-right: 10px;
         font-size: 15px;
     }
+    header .container li:first-child {
+        margin-right: 250px;
+    }
 
     header .container .main-logo {
         height: 50px;
