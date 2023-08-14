@@ -207,6 +207,7 @@ header .container .main-logo{
 .landing {
     padding-top: calc(100px + var(--main-padding));
     padding-bottom: var(--main-padding); 
+    min-height: 100vh;
 }
 .landing .container {
     display: flex;
