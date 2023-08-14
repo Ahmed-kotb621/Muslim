@@ -765,8 +765,8 @@ header .container .main-logo{
 /* end doaa */
 /* start contact */
 .contact {
-    padding-top: calc(100px + var(--main-padding));
-    padding-bottom: var(--main-padding);
+    /* padding-top: calc(100px + var(--main-padding));
+    padding-bottom: var(--main-padding); */
     height: 100vh;
 }
 
