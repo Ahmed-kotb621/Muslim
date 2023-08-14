@@ -103,7 +103,7 @@ header .head-ul {
     width: 100%;
     overflow-x: auto;
     margin-bottom: 0;
-    padding: 5px
+    padding: 5px;
 }
 
 
@@ -113,20 +113,18 @@ header .head-ul::-webkit-scrollbar {
     margin-left: 5px;
     border: 1px solid var(--main-color);
     border-radius: 8px;
-    padding: 5px;
+    padding: 2px;
     transition: 0.3s;
     min-width: fit-content;
     max-height: fit-content;
-
 }
-
+ 
 header .head-ul li:hover {
     background-color: var(--main-color);
 }
 
 header .head-ul li a {
     color: var(--main-color);
-
 }
 
 header .head-ul li a:hover {
@@ -274,7 +272,8 @@ header .container .main-logo{
 .landing .PrayerTimesAnc {
     display: block;
     width: fit-content;
-    margin: 0 auto;
+    margin: 20px auto;
+    position: relative;
     padding: 15px 30px;
     border-radius: 15px;
     color: var(--main-color);
@@ -285,6 +284,12 @@ header .container .main-logo{
 .landing .PrayerTimesAnc:hover {
     background-color: var(--gold);
     transition: 0.3s;
+}
+
+@media (min-width:768px) {
+    .landing .PrayerTimesAnc {
+        margin:  100px auto;
+    }
 }
 @media (max-width:767px) {
     .landing {
@@ -767,7 +772,7 @@ header .container .main-logo{
 .contact {
     padding-top: calc(100px + var(--main-padding));
     padding-bottom: var(--main-padding);
-    height: fit-content;
+    height:100vh;
 }
 
 .contact .container {
@@ -924,13 +929,10 @@ footer .footer-info .footer-links a::before{
     bottom: 5px;    
 
 }
-footer .footer-social {
-
-    padding-top: 30px;
-}
-
+ 
 footer .footer-social {
     font-family: cursive;
+    padding-top: 30px;
 }
 footer .footer-social h3 {
     font-size: 16px;
